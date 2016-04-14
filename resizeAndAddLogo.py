@@ -4,7 +4,7 @@ from PIL import Image
 SQUARE_FIT_SIZE = 300
 LOGO_FILENAME = 'logo.png'
 
-logoIm = Image.open( 'originals\kitty_and_bunny.jpg' )
+logoIm = Image.open( LOGO_FILENAME )
 logoWidth, logoHeight = logoIm.size
 
 #TODO: Loop over all files in the working directory
