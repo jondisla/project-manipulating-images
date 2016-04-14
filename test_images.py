@@ -6,7 +6,7 @@ from PIL import Image
 def testDirectories():
     initialDirectory = os.getcwd()
     os.chdir('withLogo')
-    assert (os.getcwd() == os.path.join(initialDirectory,'withLogo'))
+    assert (os.getcwd() == os.path.join(initialDirectory,'../withLogo'))
 
 def testTotalFiles():
     os.chdir('../')
