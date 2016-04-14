@@ -9,15 +9,15 @@ logoWidth, logoHeight = logoIm.size
 
 #TODO: Loop over all files in the working directory
 os.makedirs('withLogo', exist_ok=True)
-os.chdir('originals')
+os.chdir('./originals/')
 
-for filenames in os.listdir('.'):
-    if not (filenames.endswith('.png') or
-filenames.endswith('.jpg')) \
-    or filenames == LOGO_FILENAME:
+for filename in os.listdir('.'):
+    if not (filename.endswith('.png') or
+filename.endswith('.jpg')) \
+    or filename == LOGO_FILENAME:
         continue
 
-    im = Image.open(filenames)
+    im = Image.open(filename)
     width, height = im.size
 
 #TODO: Check if file image needs to be
@@ -31,12 +31,12 @@ filenames.endswith('.jpg')) \
             width = int((SQUARE_FIT_SIZE / height) * width)
             height = SQUARE_FIT_SIZE
 
-        print('Resizing %s...' % (filenames))
+        print('Resizing %s...' % (filename))
         im = im.resize((width, height))
 
-        print('Adding logo to %s...' % (filenames))
+        print('Adding logo to %s...' % (filename))
         im.paste(logoIm, (width - logoWidth, height - logoHeight),
                  logoIm)
-        im.save(os.path.join('../withLogo', filenames))
+        im.save(os.path.join('withLogo', filename))
 #TODO: Add the logo.
 #TODO: Save changes.
