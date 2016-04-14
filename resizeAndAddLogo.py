@@ -37,6 +37,6 @@ filename.endswith('.jpg')) \
         print('Adding logo to %s...' % (filename))
         im.paste(logoIm, (width - logoWidth, height - logoHeight),
                  logoIm)
-        im.save(os.path.join('../withLogo', filename))
+        im.save(os.path.join('../withLogo', filenames))
 #TODO: Add the logo.
 #TODO: Save changes.
