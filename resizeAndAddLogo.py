@@ -11,9 +11,9 @@ logoWidth, logoHeight = logoIm.size
 os.makedirs('withLogo', exist_ok=True)
 os.chdir('originals')
 
-for filename in os.listdir('.'):
+for filenames in os.listdir('.'):
     if not (filename.endswith('.png') or
-filename.endswith('.jpg')) \
+filenames.endswith('.jpg')) \
     or filename == LOGO_FILENAME:
         continue
 
@@ -37,6 +37,6 @@ filename.endswith('.jpg')) \
         print('Adding logo to %s...' % (filename))
         im.paste(logoIm, (width - logoWidth, height - logoHeight),
                  logoIm)
-        im.save(os.path.join('../withLogo', filenames))
+        im.save(os.path.join('../withLogo', filename))
 #TODO: Add the logo.
 #TODO: Save changes.
